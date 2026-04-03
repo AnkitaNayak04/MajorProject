@@ -32,7 +32,7 @@ const PYQ = () => {
     const fetchData = async () => {
         try {
             const res = await axios.get(
-                `http://localhost:5000/api/pyq?year=${year}&subject=${subject}`
+                `https://deptconnect-1kcc.onrender.com/api/pyq?year=${year}&subject=${subject}`
             );
             setData(res.data);
         } catch (err) {

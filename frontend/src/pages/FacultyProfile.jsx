@@ -8,7 +8,7 @@ function FacultyProfile() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/faculty/${id}`)
+      .get(`https://deptconnect-1kcc.onrender.com/api/faculty/${id}`)
       .then((res) => setFaculty(res.data))
       .catch((err) => console.error(err));
   }, [id]);

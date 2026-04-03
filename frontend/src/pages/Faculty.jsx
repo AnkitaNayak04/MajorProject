@@ -7,7 +7,7 @@ function Faculty() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/faculty")
+      .get("https://deptconnect-1kcc.onrender.com/api/faculty")
       .then((res) => setFacultyData(res.data))
       .catch((err) => console.error(err));
   }, []);

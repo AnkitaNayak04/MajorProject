@@ -7,11 +7,11 @@ function NoticeAnnouncementSection() {
   const [announcements, setAnnouncements] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/notices")
+    axios.get("https://deptconnect-1kcc.onrender.com/api/notices")
       .then(res => setNotices(res.data))
       .catch(() => {});
 
-    axios.get("http://localhost:5000/api/announcements")
+    axios.get("https://deptconnect-1kcc.onrender.com/api/announcements")
       .then(res => setAnnouncements(res.data))
       .catch(() => {});
   }, []);

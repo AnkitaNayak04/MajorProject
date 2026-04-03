@@ -8,7 +8,7 @@ function Activities() {
     // 🔥 FETCH ACTIVITIES
     const fetchActivities = async () => {
         try {
-            const res = await axios.get("http://localhost:5000/api/activities");
+            const res = await axios.get("https://deptconnect-1kcc.onrender.com/activities");
             setActivities(res.data);
         } catch (err) {
             console.error(err);
@@ -35,7 +35,7 @@ function Activities() {
 
         try {
             await axios.post(
-                "http://localhost:5000/api/registrations/register",
+                "https://deptconnect-1kcc.onrender.com/api/registrations/register",
                 {
                     name,
                     email,

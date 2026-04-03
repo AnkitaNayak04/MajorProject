@@ -37,8 +37,8 @@
 //       axios.get("http://localhost:5000/api/notices"),
 //       axios.get("http://localhost:5000/api/announcements"),
 //       axios.get("http://localhost:5000/api/events"),
-//       axios.get("http://localhost:5000/api/pyq"),
-//       axios.get("http://localhost:5000/api/activities"),
+//       axios.get("http://:5000/api/pyq"),
+//       axios.get("http://:5000/api/activities"),
 //       axios.get("http://localhost:5000/api/faculty"),
 //     ]);
 
@@ -440,13 +440,13 @@ function Dashboard() {
   const fetchData = async () => {
     try {
       const [n, a, e, p, act, f, ach] = await Promise.all([
-        axios.get("http://localhost:5000/api/notices"),
-        axios.get("http://localhost:5000/api/announcements"),
-        axios.get("http://localhost:5000/api/events"),
-        axios.get("http://localhost:5000/api/pyq"),
-        axios.get("http://localhost:5000/api/activities"),
-        axios.get("http://localhost:5000/api/faculty"),
-        axios.get("http://localhost:5000/api/achievements"),
+        axios.get("https://deptconnect-1kcc.onrender.com/api/notices"),
+        axios.get("https://deptconnect-1kcc.onrender.com/api/announcements"),
+        axios.get("https://deptconnect-1kcc.onrender.com/api/events"),
+        axios.get("https://deptconnect-1kcc.onrender.com/api/pyq"),
+        axios.get("https://deptconnect-1kcc.onrender.com/api/activities"),
+        axios.get("https://deptconnect-1kcc.onrender.com/api/faculty"),
+        axios.get("https://deptconnect-1kcc.onrender.com/api/achievements"),
       ]);
 
       setNotices(n.data);
@@ -499,9 +499,9 @@ function Dashboard() {
     try {
       if (active === "notice") {
         if (editingNoticeId) {
-          await axios.put(`http://localhost:5000/api/notices/${editingNoticeId}`, { title, description }, config);
+          await axios.put(`https://deptconnect-1kcc.onrender.com/api/notices/${editingNoticeId}`, { title, description }, config);
         } else {
-          await axios.post("http://localhost:5000/api/notices", { title, description }, config);
+          await axios.post("https://deptconnect-1kcc.onrender.com/api/notices", { title, description }, config);
         }
       }
       
@@ -515,36 +515,36 @@ function Dashboard() {
         };
 
         if (editingFacultyId) {
-          await axios.put(`http://localhost:5000/api/faculty/${editingFacultyId}`, data, config);
+          await axios.put(`https://deptconnect-1kcc.onrender.com/api/faculty/${editingFacultyId}`, data, config);
         } else {
-          await axios.post("http://localhost:5000/api/faculty", data, config);
+          await axios.post("https://deptconnect-1kcc.onrender.com/api/faculty", data, config);
         }
       }
 
       if (active === "announcement") {
         const data = { title, description, date };
         if (editingAnnouncementId) {
-          await axios.put(`http://localhost:5000/api/announcements/${editingAnnouncementId}`, data, config);
+          await axios.put(`https://deptconnect-1kcc.onrender.com/api/announcements/${editingAnnouncementId}`, data, config);
         } else {
-          await axios.post("http://localhost:5000/api/announcements", data, config);
+          await axios.post("https://deptconnect-1kcc.onrender.com/api/announcements", data, config);
         }
       }
 
       if (active === "event") {
         const data = { title, description, date };
         if (editingEventId) {
-          await axios.put(`http://localhost:5000/api/events/${editingEventId}`, data, config);
+          await axios.put(`https://deptconnect-1kcc.onrender.com/api/events/${editingEventId}`, data, config);
         } else {
-          await axios.post("http://localhost:5000/api/events", data, config);
+          await axios.post("https://deptconnect-1kcc.onrender.com/api/events", data, config);
         }
       }
 
       if (active === "activities") {
         const data = { title, description, date };
         if (editingActivityId) {
-          await axios.put(`http://localhost:5000/api/activities/${editingActivityId}`, data, config);
+          await axios.put(`https://deptconnect-1kcc.onrender.com/api/activities/${editingActivityId}`, data, config);
         } else {
-          await axios.post("http://localhost:5000/api/activities", data, config);
+          await axios.post("https://deptconnect-1kcc.onrender.com/api/activities", data, config);
         }
       }
 
@@ -558,9 +558,9 @@ function Dashboard() {
         config.headers["Content-Type"] = "multipart/form-data";
 
         if (editingPyqId) {
-          await axios.put(`http://localhost:5000/api/pyq/${editingPyqId}`, formData, config);
+          await axios.put(`https://deptconnect-1kcc.onrender.com/api/pyq/${editingPyqId}`, formData, config);
         } else {
-          await axios.post("http://localhost:5000/api/pyq", formData, config);
+          await axios.post("https://deptconnect-1kcc.onrender.com/api/pyq", formData, config);
         }
       }
 
@@ -577,9 +577,9 @@ function Dashboard() {
         };
 
         if (editingAchievementId) {
-          await axios.put(`http://localhost:5000/api/achievements/${editingAchievementId}`, data, config);
+          await axios.put(`https://deptconnect-1kcc.onrender.com/api/achievements/${editingAchievementId}`, data, config);
         } else {
-          await axios.post("http://localhost:5000/api/achievements", data, config);
+          await axios.post("https://deptconnect-1kcc.onrender.com/api/achievements", data, config);
         }
       }
 
@@ -593,7 +593,7 @@ function Dashboard() {
 
   const handleDelete = async (type, id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/${type}/${id}`, {
+      await axios.delete(`https://deptconnect-1kcc.onrender.com/api/${type}/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchData();

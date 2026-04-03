@@ -163,7 +163,7 @@ function Achievements() {
   const fetchAchievements = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/api/achievements");
+      const response = await axios.get("https://deptconnect-1kcc.onrender.com/api/achievements");
       const allAchievements = response.data;
       
       // Separate student and faculty achievements

@@ -31,12 +31,12 @@ function FacultyProfile() {
               <div className="absolute -inset-2 bg-gray-100 rounded-2xl"></div>
 
               <div className="relative bg-white p-2 rounded-2xl shadow-md group-hover:shadow-lg transition duration-300">
-                <img
+                {/* <img
                   src={faculty.image}
                   alt={faculty.name}
                   onError={(e) => (e.target.src = "/default-user.png")}
                   className="w-48 md:w-56 h-auto rounded-xl object-cover transition duration-300 group-hover:scale-105"
-                />
+                /> */}
               </div>
 
             </div>

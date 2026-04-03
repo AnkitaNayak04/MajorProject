@@ -40,15 +40,15 @@ function Faculty() {
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
 
-                  {/* IMAGE */}
+                  IMAGE
                   <div className="w-40 h-40 mx-auto mb-4 rounded-xl overflow-hidden bg-gray-200 border-2 border-red-100">
-                    <img
+                    {/* <img
                       src={faculty.image}
                       alt={faculty.name}
                       onError={(e) => (e.target.src = "/default-user.png")}
                       className="w-full h-full object-cover object-top
                       transition duration-500 group-hover:scale-110"
-                    />
+                    /> */}
                   </div>
 
                   {/* NAME */}

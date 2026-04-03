@@ -2,17 +2,12 @@ import React from "react";
 import "../style.css";
 
 const companies = [
-  "wipro.png",
-  "techmahindra.jpg",
-  "cognizant.png",
-  "tcs.png",
-  "deloitte.png",
-  "ibm.png",
-  "isro.png",
-  "oracle.png",
-  "pwc.png",
-  "salesforce.png",
-  "sap.png"
+   "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
 ];
 
 const alumni = [

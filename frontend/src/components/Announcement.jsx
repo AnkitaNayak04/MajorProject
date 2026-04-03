@@ -160,7 +160,9 @@ const Announcement = ({ editable = false }) => {
         if (!window.confirm("Delete announcement?")) return;
 
         await API.delete(`/announcements/${id}`);
-        setAnnouncements(announcements.filter((a) => a._id !== id));
+        setAnnouncements(
+  (Array.isArray(announcements) ? announcements : []).filter(a => a.active)
+);
     };
 
     return (

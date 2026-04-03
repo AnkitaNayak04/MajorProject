@@ -167,8 +167,12 @@ function Achievements() {
       const allAchievements = response.data;
       
       // Separate student and faculty achievements
-      const students = allAchievements.filter(ach => ach.type === "student");
-      const faculties = allAchievements.filter(ach => ach.type === "faculty");
+      const students = students = (Array.isArray(allAchievements) ? allAchievements : []).filter(
+  a => a.type === "student"
+);
+      const faculties = students = (Array.isArray(allAchievements) ? allAchievements : []).filter(
+  a => a.type === "faculty"
+);
       
       setStudentAchievements(students);
       setFacultyAchievements(faculties);

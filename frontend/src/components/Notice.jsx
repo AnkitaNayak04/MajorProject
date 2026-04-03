@@ -46,7 +46,7 @@ const Notice = ({ editable = false }) => {
 
     const del = async (id) => {
         await API.delete(`/notices/${id}`);
-        setData(data.filter((d) => d._id !== id));
+        setData((Array.isArray(data) ? data : []).filter(d => d._id !== id));
     };
 
     return (

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 const galleryImages = [
-  "/gallery1.jpg",
-  "/gallery2.jpg",
-  "/gallery3.jpg",
-  "/gallery4.jpg",
-  "/gallery5.jpg",
-  "/gallery6.jpg",
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
 ];
 
 function GallerySection() {

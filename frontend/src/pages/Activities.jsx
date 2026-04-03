@@ -5,11 +5,15 @@ function Activities() {
     const [activities, setActivities] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // 🔥 FETCH ACTIVITIES
+    // 🔥 FETCH ACTIVITIES (FIXED API + SAFETY)
     const fetchActivities = async () => {
         try {
-            const res = await axios.get("https://deptconnect-1kcc.onrender.com/activities");
-            setActivities(res.data);
+            const res = await axios.get(
+                "https://deptconnect-1kcc.onrender.com/api/activities"
+            );
+
+            // ✅ SAFE FIX (prevents filter error)
+            setActivities(Array.isArray(res.data) ? res.data : []);
         } catch (err) {
             console.error(err);
             alert("Error fetching activities");
@@ -22,7 +26,7 @@ function Activities() {
         fetchActivities();
     }, []);
 
-    // 🔥 REGISTER FUNCTION (FIXED)
+    // 🔥 REGISTER FUNCTION (UNCHANGED)
     const handleRegister = async (item) => {
         const name = prompt("Enter your name:");
         const email = prompt("Enter your email:");
@@ -49,9 +53,7 @@ function Activities() {
             alert("Registered Successfully 🎉");
         } catch (err) {
             console.error(err);
-            alert(
-                err.response?.data?.msg || "Registration failed"
-            );
+            alert(err.response?.data?.msg || "Registration failed");
         }
     };
 
@@ -60,7 +62,6 @@ function Activities() {
     }
 
     return (
-        // 🔥 navbar overlap fix
         <div className="min-h-screen bg-gray-100 p-10 pt-24">
 
             <h1 className="text-3xl font-bold text-center text-red-700 mb-10">
@@ -68,12 +69,14 @@ function Activities() {
             </h1>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {activities.length === 0 ? (
+
+                {/* ✅ SAFE LENGTH CHECK */}
+                {(Array.isArray(activities) ? activities : []).length === 0 ? (
                     <p className="text-center col-span-full">
                         No Activities Available
                     </p>
                 ) : (
-                    activities.map((item) => (
+                    (Array.isArray(activities) ? activities : []).map((item) => (
                         <div
                             key={item._id}
                             className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"

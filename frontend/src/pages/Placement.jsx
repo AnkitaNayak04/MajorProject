@@ -2,12 +2,12 @@ import React from "react";
 import "../style.css";
 
 const companies = [
-   "https://via.placeholder.com/400",
-  "https://via.placeholder.com/400",
-  "https://via.placeholder.com/400",
-  "https://via.placeholder.com/400",
-  "https://via.placeholder.com/400",
-  "https://via.placeholder.com/400",
+  //  "https://via.placeholder.com/400",
+  // "https://via.placeholder.com/400",
+  // "https://via.placeholder.com/400",
+  // "https://via.placeholder.com/400",
+  // "https://via.placeholder.com/400",
+  // "https://via.placeholder.com/400",
 ];
 
 const alumni = [

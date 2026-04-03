@@ -25,7 +25,7 @@ function HodMessage() {
             <div className="relative w-56 h-56">
               <div className="absolute inset-0 rounded-full bg-red-600 blur-xl opacity-20"></div>
               <img
-                src="/hod.png"
+                // src="/hod.png"
                 alt="HOD"
                 className="relative w-full h-full rounded-full object-cover
                            border-4 border-red-700 bg-white"

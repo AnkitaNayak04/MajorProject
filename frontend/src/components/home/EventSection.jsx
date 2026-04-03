@@ -13,14 +13,17 @@ function EventSection() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios.get("https://deptconnect-1kcc.onrender.com")
-      .then(res => setEvents(res.data))
-      .catch(err => console.error(err));
+    axios.get("https://deptconnect-1kcc.onrender.com/api/events")
+  .then(res => {
+    const data = Array.isArray(res.data) ? res.data : [];
+    setEvents(data);
+  })
+  .catch(err => console.error(err));
   }, []);
 
-  const filteredEvents = events.filter(e =>
-    new Date(e.date).toLocaleString("default", { month: "long" }) === selectedMonth
-  );
+ const filteredEvents = (Array.isArray(events) ? events : []).filter(e =>
+  new Date(e.date).toLocaleString("default", { month: "long" }) === selectedMonth
+);
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-red-50">

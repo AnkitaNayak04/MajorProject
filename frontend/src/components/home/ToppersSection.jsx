@@ -5,29 +5,29 @@ const topperData = {
     "2021-24": {
       name: "Anwesh Kumar",
       score: "98.4%",
-      image: "/topper1.jpg"
+      // image: "https://via.placeholder.com/400"
     },
     "2022-25": {
       name: "Anwesh Kumar",
       score: "98.4%",
-      image: "/topper1.jpg"
+      // image: "https://via.placeholder.com/400"
     },
     "2023-26": {
       name: "Aryaman Das",
       score: "97.0%",
-      image: "/topper2.jpg"
+      // image: "https://via.placeholder.com/400"
     }
   },
   MCA: {
     "2023-25": {
       name: "Rohan Mishra",
       score: "95.2%",
-      image: "/topper3.jpg"
+      // image: "https://via.placeholder.com/400"
     },
     "2024-26": {
       name: "Rohan Mishra",
       score: "95.2%",
-      image: "/topper3.jpg"
+      // image: "https://via.placeholder.com/400"
     }
   }
 };

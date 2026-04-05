@@ -2,10 +2,25 @@ const express = require("express");
 const router = express.Router();
 const Faculty = require("../models/Faculty");
 
-// GET all
+// ✅ GET all
 router.get("/", async (req, res) => {
   const data = await Faculty.find();
   res.json(data);
+});
+
+// ✅ GET by ID (🔥 ADD THIS)
+router.get("/:id", async (req, res) => {
+  try {
+    const faculty = await Faculty.findById(req.params.id);
+
+    if (!faculty) {
+      return res.status(404).json({ message: "Faculty not found" });
+    }
+
+    res.json(faculty);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
 // ADD
